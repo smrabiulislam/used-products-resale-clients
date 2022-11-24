@@ -27,10 +27,10 @@ const SignIn = () => {
                             {success && <p>User Created Successfully</p>}
                         </div> */}
                     <div className="form-control mt-6">
-                        <input className="btn bg-green-700" type="submit" value="Sign Up" />
+                        <input className="btn bg-green-700" type="submit" value="Sign In" />
                     </div>
                 </form>
-                <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
+                <p className='text-center'>Don't have any account? <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>
             </div>
         </div>
     );

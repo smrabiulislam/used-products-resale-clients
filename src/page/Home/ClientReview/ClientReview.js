@@ -1,4 +1,8 @@
 import React from 'react';
+import { StarIcon } from '@heroicons/react/24/solid';
+import img1 from '../../../assets/img/img1.jpg'
+import img2 from '../../../assets/img/img2.jpg'
+import img3 from '../../../assets/img/img3.jpg'
 
 const ClientReview = () => {
     return (
@@ -9,23 +13,48 @@ const ClientReview = () => {
             </div>
             <div className="carousel w-full">
                 <div id="item1" className="carousel-item w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-1/4" />
+                    <div className=' mt-4 grid md:grid-cols-3 gap-2'>
+                        <div className=' p-10 rounded-lg shadow-2xl border-2 border-indigo-500 '>
+                            <img className='h-12 w-12 rounded-full' src={img1} />
+                            <h1 className='mb-2 text-xl text-left text-red-700'>Adam</h1>
+                            <div className='flex my-2'>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                            </div>
+                            <p className='text-sm text-left'>i have been trying to get into Software /Web Development sector for a long time but
+                                couldn't , because it is quite difficult to learn and maintain that consistency if you are learning
+                                alone . </p>
+                        </div>
+                        <div className=' p-10 rounded-lg shadow-2xl border-2 border-indigo-500 '>
+                            <img className='h-12 w-12 rounded-full' src={img2} />
+                            <h1 className='mb-2 text-xl text-left text-red-700'>Alex</h1>
+                            <div className='flex my-2'>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                            </div>
+                            <p className='text-sm text-left'>This course was a life-changer for me. I learned how to stay consistent, persistent and more importantly,
+                                I learned "how to learn".</p>
+                        </div>
+                        <div className=' p-10 rounded-lg shadow-2xl border-2 border-indigo-500 '>
+                            <img className='h-12 w-12 rounded-full' src={img3} />
+                            <h1 className='mb-2 text-xl text-left text-red-700'>Robin</h1>
+                            <div className='flex my-2'>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                                <StarIcon className='text-orange-400 h-5'></StarIcon>
+                            </div>
+                            <p className='text-sm text-left'>Your guideline was so strong that make me Very active and thats why i got hired so fast.</p>
+                        </div>
+                    </div>
                 </div>
-                <div id="item2" className="carousel-item w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                </div>
-                <div id="item3" className="carousel-item w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                </div>
-                <div id="item4" className="carousel-item w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                </div>
-            </div>
-            <div className="flex justify-center w-full py-2 gap-2">
-                <a href="#item1" className="btn btn-xs">1</a>
-                <a href="#item2" className="btn btn-xs">2</a>
-                <a href="#item3" className="btn btn-xs">3</a>
-                <a href="#item4" className="btn btn-xs">4</a>
             </div>
         </div>
     );

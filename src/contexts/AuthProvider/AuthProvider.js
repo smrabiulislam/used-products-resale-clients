@@ -54,14 +54,14 @@ const AuthProvider = ({ children }) => {
 
     // 5. Logout
 
-    const logout = () => {
+    const logOut = () => {
         setLoading(true)
-        localStorage.removeItem('aircnc-token')
+        // localStorage.removeItem('aircnc-token')
         return signOut(auth)
     }
 
     //6. Login with Password
-    const signin = (email, password) => {
+    const signIn = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -91,8 +91,8 @@ const AuthProvider = ({ children }) => {
         updateUserProfile,
         verifyEmail,
         signInWithGoogle,
-        logout,
-        signin,
+        logOut,
+        signIn,
         resetPassword,
         loading,
         setLoading,

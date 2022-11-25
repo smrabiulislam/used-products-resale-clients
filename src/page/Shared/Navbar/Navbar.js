@@ -7,19 +7,21 @@ const Navbar = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                console.log('signOut');
+            })
             .catch(err => console.log(err));
     }
 
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
         {/* <li><Link to="/signin">Sign In</Link></li>
         <li><Link to="/signup">Sign Up</Link></li> */}
         {user?.uid ?
             <>
-                {/* <li><Link to="/dashboard">Dashboard</Link></li> */}
+                <li><Link to="/dashboard">Dashboard</Link></li>
                 <li><button onClick={handleLogOut}>Sign out</button></li>
             </>
             : <li><Link to="/signin">Sign in</Link></li>}

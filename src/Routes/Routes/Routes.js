@@ -8,6 +8,7 @@ import AllUser from '../../page/Dashboard/AllUser/AllUser';
 import Dashboard from '../../page/Dashboard/Dashboard/Dashboard';
 import MyOrder from '../../page/Dashboard/MyOrder/MyOrder';
 import Home from '../../page/Home/Home/Home';
+import Product from '../../page/Product/Product/Product';
 import SignIn from '../../page/SignIn/SignIn';
 import SignUp from '../../page/SignUp/SignUp';
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/product',
+                element: <Product></Product>
             },
             {
                 path: '/signup',

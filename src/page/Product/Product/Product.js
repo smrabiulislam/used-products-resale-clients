@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import CardHome from './CardHome';
+import ProductCard from '../ProductCard/ProductCard';
 
-const ServiceHome = () => {
+const Product = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('services.json')
@@ -16,14 +16,14 @@ const ServiceHome = () => {
             </div>
             <div className='pt-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
-                    services.map(service => <CardHome
+                    services.map(service => <ProductCard
                         key={service._id}
                         service={service}
-                    ></CardHome>)
+                    ></ProductCard>)
                 }
             </div>
         </div>
     );
 };
 
-export default ServiceHome;
+export default Product;

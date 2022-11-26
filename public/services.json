@@ -41,22 +41,22 @@
     },
     {
         "_id": "635b5afc1dafe382a9da8c98",
-        "category": "Hero",
+        "category": "Royel",
         "location": "Dhaka",
         "author": "Rabiul",
-        "title": "Engine Repair",
-        "img": "https://i.ibb.co/5MvmD2g/88.jpg",
-        "price": "150.00",
-        "description": "Lorem ipsum dol"
+        "title": "Royal Enfield",
+        "img": "https://assets.newatlas.com/dims4/default/cbd906a/2147483647/strip/true/crop/1445x963+134+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Findian-motorcycle-market-turmoil-triumph-bajaj-29.jpg",
+        "price": "2500.00",
+        "description": "The Royal Enfield model range is still comprised of 350cc and 500cc single cylinder motorcycles with more than a passing resemblance to the 1932 Bullet, yet four of every five bikes over 180cc sold each month in India are Royal Enfields."
     },
     {
         "_id": "635b5b691dafe382a9da8c99",
-        "category": "Hero",
-        "location": "Dhaka",
+        "category": "Royal",
+        "location": "Khulna",
         "author": "Rabiul",
-        "title": "Automatic Services",
-        "img": "https://i.ibb.co/wh7t3N3/555.jpg",
-        "price": "30.00",
+        "title": "Royal-Enfield Interceptor 650",
+        "img": "https://c.ndtvimg.com/pegol858_royal-enfield-classic-350-signals-edition_625x300_28_August_18.jpg",
+        "price": "3000.00",
         "description": "Lorem ipsum dol"
     }
 ]

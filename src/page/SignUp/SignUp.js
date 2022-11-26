@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import app from '../../firebase/firebase.config';
@@ -13,6 +14,11 @@ const SignUp = () => {
     const navigate = useNavigate();
     const [success, setSuccess] = useState(false);
 
+
+    // img add
+
+    // const imageHostKey = c3e0493f5d1b2f2c6db8990701cd97b9;
+
     const handleRegister = (event) => {
         event.preventDefault();
         setSuccess(false);
@@ -20,8 +26,33 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        const select = form.select.value;
+        const image = form.image.files[0];
         // const photoURL = form.photoURL.value
-        console.log(email, password, /**handleUpdateProfile */);
+
+        const formData = new FormData()
+        formData.append('image', image)
+
+        const url = 'https://api.imgbb.com/1/upload?expiration=600&key=c3e0493f5d1b2f2c6db8990701cd97b9'
+        fetch(url, {
+            method: 'POST',
+            body: formData,
+        })
+            .then(res => res.json())
+            .then(imageData => {
+                // if (imgData.success) {
+                //     console.log(imgData.data.url);
+                //     const doctor = {
+                //         name: data.name,
+                //         email: data.email,
+                //         specialty: data.specialty,
+                //         image: imgData.data.url
+                //     }
+                // }
+            })
+
+
+        console.log(name, email, password, select, image /**handleUpdateProfile */);
         if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
             setPasswordError('Please provide at leats two uppercase')
             return;
@@ -99,9 +130,19 @@ const SignUp = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
+                            <span className="label-text">Do you want to create a seller account?</span>
+                        </label>
+                        <select type="text" name='select' className="select select-bordered w-full">
+                            <option >Buyer</option>
+                            <option >Seller</option>
+                        </select>
+
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
                             <span className="label-text">User Image</span>
                         </label>
-                        <input type="file" name="image" />
+                        <input type="file" name="image" required />
                     </div>
                     <div className="form-control">
                         <p className='text-red-600'>{passwordError}</p>

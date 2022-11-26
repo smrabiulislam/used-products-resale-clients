@@ -4,7 +4,7 @@ import ProductCard from '../ProductCard/ProductCard';
 
 const Product = () => {
     const [services, setServices] = useState([]);
-    // const [order, setOrder] = useState(null);
+    const [order, setOrder] = useState(null);
     useEffect(() => {
         fetch('services.json')
             .then(res => res.json())
@@ -21,13 +21,16 @@ const Product = () => {
                     services.map(service => <ProductCard
                         key={service._id}
                         service={service}
+                        setOrder={setOrder}
                     ></ProductCard>)
                 }
             </div>
-            {services.map(service => <BookingModal
-                key={service._id}
-                service={service}
-            ></BookingModal>)}
+            {
+                order &&
+                <BookingModal
+                    order={order}
+                ></BookingModal>
+            }
         </div>
     );
 };

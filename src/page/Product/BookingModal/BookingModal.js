@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BookingModal = ({ service }) => {
+const BookingModal = ({ order }) => {
 
-    console.log(service)
-    const { title, price } = service;
+    // console.log(order)
+    const { title, price } = order;
 
     return (
         <>
@@ -20,7 +20,7 @@ const BookingModal = ({ service }) => {
                         <input name="email" type="email" placeholder="Email Address" className="input w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                         <br />
-                        <input className='btn btn-accent w-full' type="submit" value="Book Now" />
+                        <input className='btn btn-primary w-full' type="submit" value="Book Now" />
                     </form>
                 </div>
             </div>

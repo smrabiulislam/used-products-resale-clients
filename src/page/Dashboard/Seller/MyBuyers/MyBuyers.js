@@ -9,7 +9,7 @@ const MyBuyers = () => {
         queryKey: ['myBuyers'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/my-orders/${user?.email}`);
+                const res = await fetch(`https://resellerhub-server-assignment-12.vercel.app/my-orders/${user?.email}`);
                 const data = await res.json();
                 return data;
             }

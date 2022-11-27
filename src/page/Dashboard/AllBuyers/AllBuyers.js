@@ -3,12 +3,11 @@ import React, { useEffect, useState } from 'react';
 const AllBuyers = () => {
     const [buyers, setBuyers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://resellerhub-server-assignment-12.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 const showSallers = data.filter(saler => saler.check === false)
                 // console.log(showSallers)
-
                 setBuyers(showSallers)
             })
     }, [])

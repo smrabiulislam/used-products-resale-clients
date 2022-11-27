@@ -17,7 +17,8 @@ const AddAProduct = () => {
         const name = form.name.value;
         const location = form.location.value;
         const used = form.used.value;
-        const Price = form.Price.value;
+        const sellPrice = form.sellPrice.value;
+        const regularPrice = form.regularPrice.value;
         const category = form.category.value;
         const image = form.image.files[0];
         const salerName = form.salerName.value;
@@ -38,7 +39,8 @@ const AddAProduct = () => {
                     const product = {
                         salerName,
                         category,
-                        Price,
+                        sellPrice,
+                        regularPrice,
                         location,
                         used,
                         photo: imageData.data.url,
@@ -46,11 +48,10 @@ const AddAProduct = () => {
                         email: user?.email
                     }
 
-                    fetch('http://localhost:5000/add-a-product', {
+                    fetch('https://resellerhub-server-assignment-12.vercel.app/add-a-product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
-                            // authorization: `bearer ${localStorage.getItem('accessToken')}`
                         },
                         body: JSON.stringify(product)
                     })
@@ -137,11 +138,18 @@ const AddAProduct = () => {
 
 
                         <div className="mt-6 w-full">
-                            <label htmlFor="Price" className="text-sm font-medium leading-none text-gray-800">
+                            <label htmlFor="sellPrice" className="text-sm font-medium leading-none text-gray-800">
                                 {" "}
-                                Price{" "}
+                                sellPrice{" "}
                             </label>
-                            <input name='Price' id="Price" aria-labelledby="Price" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="Price " required />
+                            <input name='Price' id="sellPrice" aria-labelledby="sellPrice" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="Sell Price " required />
+                        </div>
+                        <div className="mt-6 w-full">
+                            <label htmlFor="regularPrice" className="text-sm font-medium leading-none text-gray-800">
+                                {" "}
+                                regularPrice{" "}
+                            </label>
+                            <input name='regularPrice' id="regularPrice" aria-labelledby="regularPrice" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="Regular Price " required />
                         </div>
 
                         <div className="mt-6 w-full">

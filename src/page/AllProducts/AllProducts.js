@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Loading from '../Shared/Loading/Loading';
 import BookModal from './BookModal';
 
 const AllProducts = () => {
     const products = useLoaderData();
-    const [carData, setCarData] = useState("");
-    console.log(carData);
+    const [carData, setCarData, isLoading] = useState("");
+    // console.log(carData);
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>
@@ -27,7 +32,10 @@ const AllProducts = () => {
                             {product.name}
                         </h2>
                         <p className="text-center font-medium text-2xl my-2">
-                            Selling Price : $ {product.Price}
+                            Selling Price : $ {product.sellPrice}
+                        </p>
+                        <p className="text-center font-medium text-2xl my-2">
+                            Regular Price : $ {product.regularPrice}
                         </p>
                         <p className="text-center font-bold">
                             Location : {product.location}

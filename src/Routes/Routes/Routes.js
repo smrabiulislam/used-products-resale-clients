@@ -28,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/products/:category',
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.category}`),
+                loader: ({ params }) => fetch(`https://resellerhub-server-assignment-12.vercel.app/products/${params.category}`),
                 element: <AllProducts></AllProducts>,
 
             },
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard",
                 element: <Dashboard></Dashboard>,
-                loader: () => fetch("http://localhost:5000/users"),
+                loader: () => fetch("https://resellerhub-server-assignment-12.vercel.app/users"),
             },
             {
                 path: '/dashboard/allbuyers',

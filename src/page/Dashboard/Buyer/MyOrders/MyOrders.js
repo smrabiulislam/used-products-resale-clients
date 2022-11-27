@@ -9,7 +9,7 @@ const MyOrders = () => {
         queryKey: ['myOrders'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/my-orders/${user?.email}`);
+                const res = await fetch(`https://resellerhub-server-assignment-12.vercel.app/my-orders/${user?.email}`);
                 const data = await res.json();
                 return data;
             }
@@ -23,7 +23,7 @@ const MyOrders = () => {
         <div className='mx-4'>
             <h2 className='text-3xl text-center font-semibold mt-10'>My Orders</h2>
 
-            {myOrders.length === 0 ? <h2 className='text-3xl font-semibold mt-10 text-center'>You Have not any Orders</h2> :
+            {myOrders.length === 0 ? <h2 className='text-3xl font-semibold mt-10 text-center'>You have no orders</h2> :
                 <div className="overflow-x-auto w-full my-10">
                     <table className="table w-full">
 
@@ -69,7 +69,7 @@ const MyOrders = () => {
                                         <br />
                                         <span className="badge badge-ghost badge-sm">Condition: {order?.used} used</span>
                                     </td>
-                                    <td>${order.Price}</td>
+                                    <td>${order.sellPrice}</td>
                                     <th>
                                         <button className="btn bg-green-800 btn-sm">Pay</button>
                                     </th>

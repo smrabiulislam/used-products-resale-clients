@@ -3,35 +3,19 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
+import Loading from '../../../Shared/Loading/Loading';
 
 
 const MyProducts = () => {
     const { user } = useContext(AuthContext);
 
-
-    console.log('emailllll', user?.email)
-
-
-    /*    const [myProducts, setMyProducts] = useState([]);
-       useEffect(() => {
-           fetch(`http://localhost:5000/my-products/${user?.email}`)
-               .then(res => res.json())
-               .then(data => {
-                   setMyProducts(data)
-               })
-       }, [user?.email])
-   
-       console.log('myProducts', myProducts)
-   
-       */
-
-
+    console.log('email', user?.email)
 
     const { data: myProducts = [], isLoading, refetch } = useQuery({
         queryKey: ['myProducts'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/my-products/${user?.email}`);
+                const res = await fetch(`https://resellerhub-server-assignment-12.vercel.app/my-products/${user?.email}`);
                 const data = await res.json();
                 return data;
             }
@@ -41,11 +25,9 @@ const MyProducts = () => {
         }
     })
 
-
-
-
-
-
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     // delete product
 
@@ -83,7 +65,8 @@ const MyProducts = () => {
                                     <div className="card-body">
                                         <h2 className="card-title">{product.name}</h2>
                                         <h2 className='text-xl'>Seller Name: <span className='font-semibold italic text-blue-900'>{product.salerName}</span></h2>
-                                        <h2 className='text-xl'>Sale Price: <span className='font-semibold italic text-blue-900'>$ {product.Price}</span></h2>
+                                        <h2 className='text-xl'>Sale Price: <span className='font-semibold italic text-blue-900'>$ {product.sellPrice}</span></h2>
+                                        <h2 className='text-xl'>Regular Price: <span className='font-semibold italic text-blue-900'>$ {product.regularPrice}</span></h2>
                                         <div className='flex justify-evenly mt-10'>
 
                                             <Link onClick={() => handleDelete(product)}>

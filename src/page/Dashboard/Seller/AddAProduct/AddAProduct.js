@@ -3,6 +3,8 @@ import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 
+const imageHostKey = process.env.REACT_APP_imgbb_KEY;
+
 const AddAProduct = () => {
     const categories = useLoaderData();
     const { user } = useContext(AuthContext);
@@ -15,8 +17,7 @@ const AddAProduct = () => {
         const name = form.name.value;
         const location = form.location.value;
         const used = form.used.value;
-        const resalePrice = form.resalePrice.value;
-        const originalPrice = form.originalPrice.value;
+        const Price = form.Price.value;
         const category = form.category.value;
         const image = form.image.files[0];
         const salerName = form.salerName.value;
@@ -24,7 +25,7 @@ const AddAProduct = () => {
         const formData = new FormData()
         formData.append('image', image)
 
-        const url = 'https://api.imgbb.com/1/upload?key=c993754e5e7bdf8ca9412defbbd79642'
+        const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`;
         fetch(url, {
             method: 'POST',
             body: formData,
@@ -37,16 +38,13 @@ const AddAProduct = () => {
                     const product = {
                         salerName,
                         category,
-                        originalPrice,
-                        resalePrice,
+                        Price,
                         location,
                         used,
                         photo: imageData.data.url,
                         name,
                         email: user?.email
                     }
-                    // console.log(userInfo)
-                    // save doctor information to the database
 
                     fetch('http://localhost:5000/add-a-product', {
                         method: 'POST',
@@ -80,16 +78,12 @@ const AddAProduct = () => {
                         <p tabIndex={0} className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">
                             Add Your Product
                         </p>
-
-
-
-
                         <div className="mt-6 w-full">
                             <label htmlFor="name" className="text-sm font-medium leading-none text-gray-800">
                                 {" "}
                                 Product Name{" "}
                             </label>
-                            <input name='name' id="name" aria-labelledby="name" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="e.g: Md Shijan Ali " required />
+                            <input name='name' id="name" aria-labelledby="name" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="Product Name " required />
                         </div>
                         <div className="mt-6 w-full">
                             <label htmlFor="image" className="text-sm font-medium leading-none text-gray-800">
@@ -130,7 +124,7 @@ const AddAProduct = () => {
                                 {" "}
                                 Location{" "}
                             </label>
-                            <input name='location' id="location" aria-labelledby="location" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="e.g: Newtown 7 no,dinajpur " required />
+                            <input name='location' id="location" aria-labelledby="location" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="Locaton " required />
                         </div>
 
                         <div className="mt-6 w-full">
@@ -143,20 +137,11 @@ const AddAProduct = () => {
 
 
                         <div className="mt-6 w-full">
-                            <label htmlFor="originalPrice" className="text-sm font-medium leading-none text-gray-800">
+                            <label htmlFor="Price" className="text-sm font-medium leading-none text-gray-800">
                                 {" "}
-                                Original Price{" "}
+                                Price{" "}
                             </label>
-                            <input name='originalPrice' id="originalPrice" aria-labelledby="originalPrice" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="e.g: 12,000 " required />
-                        </div>
-
-
-                        <div className="mt-6 w-full">
-                            <label htmlFor="resalePrice" className="text-sm font-medium leading-none text-gray-800">
-                                {" "}
-                                Sale Price{" "}
-                            </label>
-                            <input name='resalePrice' id="resalePrice" aria-labelledby="resalePrice" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="e.g: 12,000 " required />
+                            <input name='Price' id="Price" aria-labelledby="Price" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="Price " required />
                         </div>
 
                         <div className="mt-6 w-full">
@@ -164,7 +149,7 @@ const AddAProduct = () => {
                                 {" "}
                                 Your Name{" "}
                             </label>
-                            <input name='salerName' disabled defaultValue={user?.displayName} id="salerName" aria-labelledby="salerName" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="e.g: Md Shijan Ali " required />
+                            <input name='salerName' disabled defaultValue={user?.displayName} id="salerName" aria-labelledby="salerName" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder="product name " required />
                         </div>
 
 

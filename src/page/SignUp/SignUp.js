@@ -17,7 +17,7 @@ const SignUp = () => {
 
     // img add
 
-    // const imageHostKey = c3e0493f5d1b2f2c6db8990701cd97b9;
+    const imageHostKey = process.env.REACT_APP_imgbb_KEY;
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -33,7 +33,7 @@ const SignUp = () => {
         const formData = new FormData()
         formData.append('image', image)
 
-        const url = 'https://api.imgbb.com/1/upload?expiration=600&key=c3e0493f5d1b2f2c6db8990701cd97b9'
+        const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`;
         fetch(url, {
             method: 'POST',
             body: formData,

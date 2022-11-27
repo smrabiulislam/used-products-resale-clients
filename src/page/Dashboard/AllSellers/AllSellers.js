@@ -8,8 +8,6 @@ const AllSellers = () => {
             .then(res => res.json())
             .then(data => {
                 const showSallers = data.filter(saler => saler.check === true)
-                // console.log(showSallers)
-
                 setSallers(showSallers)
             })
     }, [])

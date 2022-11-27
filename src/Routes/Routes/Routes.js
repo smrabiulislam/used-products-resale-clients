@@ -4,9 +4,12 @@ import DashboardLayout from '../../Layout/DashboardLayout';
 import Main from '../../Layout/Main';
 import Blog from '../../page/Blog/Blog';
 import Contact from '../../page/Contact/Contact';
-import AllUser from '../../page/Dashboard/AllUser/AllUser';
-import Dashboard from '../../page/Dashboard/Dashboard/Dashboard';
-import MyOrder from '../../page/Dashboard/MyOrder/MyOrder';
+import AllBuyers from '../../page/Dashboard/AllBuyers/AllBuyers';
+import AllSellers from '../../page/Dashboard/AllSellers/AllSellers';
+import MyOrders from '../../page/Dashboard/Buyer/MyOrders/MyOrders';
+import AddAProduct from '../../page/Dashboard/Seller/AddAProduct/AddAProduct';
+import MyBuyers from '../../page/Dashboard/Seller/MyBuyers/MyBuyers';
+import MyProducts from '../../page/Dashboard/Seller/MyProducts/MyProducts';
 import Home from '../../page/Home/Home/Home';
 import Product from '../../page/Product/Product/Product';
 import SignIn from '../../page/SignIn/SignIn';
@@ -19,10 +22,12 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('https://resellerhub-server-assignment-12.vercel.app/categories')
             },
             {
-                path: '/product',
+                path: '/category/:id',
+                loader: ({ params }) => fetch(`https://resellerhub-server-assignment-12.vercel.app/category/${params.id}`),
                 element: <Product></Product>
             },
             {
@@ -41,10 +46,6 @@ const router = createBrowserRouter([
                 path: '/blog',
                 element: <Blog></Blog>
             },
-            // {
-            //     path: '/dashboard',
-            //     element: <Dashboard></Dashboard>
-            // },
 
         ]
     },
@@ -53,12 +54,29 @@ const router = createBrowserRouter([
         element: <DashboardLayout></DashboardLayout>,
         children: [
             {
-                path: '/dashboard',
-                element: <MyOrder></MyOrder>
+                path: '/dashboard/allbuyers',
+                element: <AllBuyers></AllBuyers>
             },
             {
-                path: '/dashboard/allusers',
-                element: <AllUser></AllUser>
+                path: '/dashboard/allsellers',
+                element: <AllSellers></AllSellers>
+            },
+            {
+                path: '/dashboard/mybuyers',
+                element: <MyBuyers></MyBuyers>
+            },
+            {
+                path: '/dashboard/myorders',
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/addaproduct',
+                element: <AddAProduct></AddAProduct>,
+                loader: () => fetch('https://resellerhub-server-assignment-12.vercel.app/categories')
+            },
+            {
+                path: '/dashboard/my-products',
+                element: <MyProducts></MyProducts>
             },
         ]
     }

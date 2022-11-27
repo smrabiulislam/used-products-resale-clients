@@ -19,7 +19,6 @@ const MyOrders = () => {
         }
     })
 
-
     return (
         <div>
             <h2 className='text-3xl text-center font-semibold mt-10'>My Orders</h2>
@@ -76,12 +75,7 @@ const MyOrders = () => {
                                     </th>
                                 </tr>)
                             }
-
-
                         </tbody>
-
-
-
                     </table>
                 </div>
             }

@@ -3,7 +3,7 @@
         "_id": "635a0c0b64a6d231228942ae",
         "category": "Hero",
         "location": "Dhaka",
-        "salerName": "Rabiul",
+        "sellerName": "Rabiul",
         "title": "Hero Splendor Plus",
         "img": "https://www.herofincorp.com/sites/default/files/Splendor-Plus.webp",
         "price": "2200.00",
@@ -13,7 +13,7 @@
         "_id": "635a0c0b64a6d231228242ae",
         "category": "Hero",
         "location": "Khulna",
-        "salerName": "Rabiul",
+        "sellerName": "Rabiul",
         "title": "Hero Super Splendor",
         "img": "https://www.herofincorp.com/sites/default/files/Super-Splendor.webp",
         "price": "2000.00",
@@ -23,7 +23,7 @@
         "_id": "635a0c0b64a6d231228942af",
         "category": "Honda",
         "location": "Bagerhat",
-        "salerName": "Rabiul",
+        "sellerName": "Rabiul",
         "title": "Honda CB350RS",
         "img": "https://imgd.aeplcdn.com/1056x594/n/bw/models/colors/honda-select-model-radiant-red-metallic-1657255500666.jpg?q=75",
         "price": "3000.00",
@@ -33,7 +33,7 @@
         "_id": "635b591a1dafe382a9da8c96",
         "category": "Honda",
         "location": "Narail",
-        "salerName": "Rabiul",
+        "sellerName": "Rabiul",
         "title": "Honda",
         "img": "https://www.honda.co.uk/content/dam/central/motorcycles/colour-picker/street/cmx500_rebel/cmx500_rebel_nv_2020/nh-303m_matteaxisgreymetallic/cmx500_rebel_nv_2020_nh-303m_matteaxisgreymetallic_RHS.png/jcr:content/renditions/fb_r.png",
         "price": "4200.00",
@@ -43,7 +43,7 @@
         "_id": "635b5afc1dafe382a9da8c98",
         "category": "Royel",
         "location": "Dhaka",
-        "salerName": "Rabiul",
+        "sellerName": "Rabiul",
         "title": "Royal Enfield",
         "img": "https://assets.newatlas.com/dims4/default/cbd906a/2147483647/strip/true/crop/1445x963+134+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Findian-motorcycle-market-turmoil-triumph-bajaj-29.jpg",
         "price": "2500.00",
@@ -53,11 +53,26 @@
         "_id": "635b5b691dafe382a9da8c99",
         "category": "Royal",
         "location": "Khulna",
-        "salerName": "Rabiul",
+        "sellerName": "Rabiul",
         "title": "Royal-Enfield Interceptor 650",
         "img": "https://c.ndtvimg.com/pegol858_royal-enfield-classic-350-signals-edition_625x300_28_August_18.jpg",
         "price": "3000.00",
         "used": "1 years",
         "description": "Lorem ipsum dol"
+    },
+    {
+        "_id": "635b5b691dafe382a9da8c99",
+        "name": "Hero",
+        "img": "https://ibb.co/Hr6zfZ4"
+    },
+    {
+        "_id": "635b5b691dafe382a9da8c99",
+        "name": "Honda",
+        "img": "https://ibb.co/xLwtR4M"
+    },
+    {
+        "_id": "635b5b691dafe382a9da8c99",
+        "name": "Royal",
+        "img": "https://ibb.co/qY22sK4"
     }
 ]

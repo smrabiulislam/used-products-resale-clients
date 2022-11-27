@@ -15,6 +15,7 @@ import MyProducts from '../../page/Dashboard/Seller/MyProducts/MyProducts';
 import Home from '../../page/Home/Home/Home';
 import SignIn from '../../page/SignIn/SignIn';
 import SignUp from '../../page/SignUp/SignUp';
+import PrivateRoutes from '../PrivateRoutes/PrivateRoutes';
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: '/products/:category',
                 loader: ({ params }) => fetch(`https://resellerhub-server-assignment-12.vercel.app/products/${params.category}`),
-                element: <AllProducts></AllProducts>,
+                element: <PrivateRoutes><AllProducts></AllProducts></PrivateRoutes>,
 
             },
             {
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/dashboard",
-                element: <Dashboard></Dashboard>,
+                element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
                 loader: () => fetch("https://resellerhub-server-assignment-12.vercel.app/users"),
             },
             {

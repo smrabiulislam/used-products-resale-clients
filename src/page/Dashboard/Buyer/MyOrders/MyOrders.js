@@ -20,7 +20,7 @@ const MyOrders = () => {
     })
 
     return (
-        <div>
+        <div className='mx-4'>
             <h2 className='text-3xl text-center font-semibold mt-10'>My Orders</h2>
 
             {myOrders.length === 0 ? <h2 className='text-3xl font-semibold mt-10 text-center'>You Have not any Orders</h2> :
@@ -60,16 +60,16 @@ const MyOrders = () => {
                                     </td>
                                     <td>
                                         <div>
-                                            <div className="font-bold">{order.salerName}</div>
+                                            <div className="font-bold">{order.buyername}</div>
                                             <div className="text-sm opacity-50">{order.location}</div>
                                         </div>
                                     </td>
                                     <td>
-                                        {order.productName}
+                                        {order.name}
                                         <br />
                                         <span className="badge badge-ghost badge-sm">Condition: {order?.used} used</span>
                                     </td>
-                                    <td>{order.price} BDT</td>
+                                    <td>${order.Price}</td>
                                     <th>
                                         <button className="btn bg-green-800 btn-sm">Pay</button>
                                     </th>

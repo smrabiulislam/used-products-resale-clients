@@ -83,7 +83,7 @@ const MyProducts = () => {
                                     <div className="card-body">
                                         <h2 className="card-title">{product.name}</h2>
                                         <h2 className='text-xl'>Seller Name: <span className='font-semibold italic text-blue-900'>{product.salerName}</span></h2>
-                                        <h2 className='text-xl'>Sale Price: <span className='font-semibold italic text-blue-900'>{product.resalePrice} BDT</span></h2>
+                                        <h2 className='text-xl'>Sale Price: <span className='font-semibold italic text-blue-900'>$ {product.Price}</span></h2>
                                         <div className='flex justify-evenly mt-10'>
 
                                             <Link onClick={() => handleDelete(product)}>
@@ -92,11 +92,6 @@ const MyProducts = () => {
                                             </Link>
                                             <Link>
                                                 <button className="btn bg-green-800">Available</button>
-                                            </Link>
-                                            <Link to={`/products/sp/${product._id}`}>
-                                                <div className="card-actions">
-                                                    <button className="btn btn-primary">See Details</button>
-                                                </div>
                                             </Link>
                                         </div>
 

@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const Dashboard = () => {
     const users = useLoaderData();
-
+    console.log(users)
     return (
         <div>
             <h2 className='text-3xl text-center font-semibold  mt-10'>All Users</h2>

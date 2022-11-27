@@ -54,7 +54,7 @@ const MyBuyers = () => {
                                             <div className="flex items-center space-x-3">
                                                 <div className="avatar">
                                                     <div className="mask mask-squircle w-12 h-12">
-                                                        <img src={order?.buyerPhoto} alt="Avatar Tailwind CSS Component" />
+                                                        <img src={order?.photoURL} alt="Avatar Tailwind CSS Component" />
                                                     </div>
                                                 </div>
 
@@ -62,7 +62,7 @@ const MyBuyers = () => {
                                         </td>
                                         <td>
                                             <div>
-                                                <div className="font-bold">{order.buyerName}</div>
+                                                <div className="font-bold">{order.buyername}</div>
 
                                             </div>
                                         </td>

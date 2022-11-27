@@ -2,16 +2,17 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import DashboardLayout from '../../Layout/DashboardLayout';
 import Main from '../../Layout/Main';
+import AllProducts from '../../page/AllProducts/AllProducts';
 import Blog from '../../page/Blog/Blog';
 import Contact from '../../page/Contact/Contact';
 import AllBuyers from '../../page/Dashboard/AllBuyers/AllBuyers';
 import AllSellers from '../../page/Dashboard/AllSellers/AllSellers';
 import MyOrders from '../../page/Dashboard/Buyer/MyOrders/MyOrders';
+import Dashboard from '../../page/Dashboard/Dashboard/Dashboard';
 import AddAProduct from '../../page/Dashboard/Seller/AddAProduct/AddAProduct';
 import MyBuyers from '../../page/Dashboard/Seller/MyBuyers/MyBuyers';
 import MyProducts from '../../page/Dashboard/Seller/MyProducts/MyProducts';
 import Home from '../../page/Home/Home/Home';
-import Product from '../../page/Product/Product/Product';
 import SignIn from '../../page/SignIn/SignIn';
 import SignUp from '../../page/SignUp/SignUp';
 
@@ -26,9 +27,10 @@ const router = createBrowserRouter([
                 loader: () => fetch('https://resellerhub-server-assignment-12.vercel.app/categories')
             },
             {
-                path: '/category/:id',
-                loader: ({ params }) => fetch(`https://resellerhub-server-assignment-12.vercel.app/category/${params.id}`),
-                element: <Product></Product>
+                path: '/products/:category',
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.category}`),
+                element: <AllProducts></AllProducts>,
+
             },
             {
                 path: '/signup',
@@ -53,6 +55,11 @@ const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>,
         children: [
+            {
+                path: "/dashboard",
+                element: <Dashboard></Dashboard>,
+                loader: () => fetch("http://localhost:5000/users"),
+            },
             {
                 path: '/dashboard/allbuyers',
                 element: <AllBuyers></AllBuyers>

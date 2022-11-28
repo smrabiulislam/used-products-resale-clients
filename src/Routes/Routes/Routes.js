@@ -12,6 +12,7 @@ import Dashboard from '../../page/Dashboard/Dashboard/Dashboard';
 import AddAProduct from '../../page/Dashboard/Seller/AddAProduct/AddAProduct';
 import MyBuyers from '../../page/Dashboard/Seller/MyBuyers/MyBuyers';
 import MyProducts from '../../page/Dashboard/Seller/MyProducts/MyProducts';
+import Error from '../../page/Error/Error';
 import Home from '../../page/Home/Home/Home';
 import SignIn from '../../page/SignIn/SignIn';
 import SignUp from '../../page/SignUp/SignUp';
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <Main></Main>,
         children: [
+            {
+                path: '*',
+                element: <Error></Error>
+            },
             {
                 path: '/',
                 element: <Home></Home>,

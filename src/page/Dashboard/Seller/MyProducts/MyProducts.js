@@ -32,7 +32,7 @@ const MyProducts = () => {
     // delete product
 
     const handleDelete = product => {
-        fetch(`http://localhost:5000/my-products/${product._id}`, {
+        fetch(`https://resellerhub-server-assignment-12.vercel.app/my-products/${product._id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
@@ -45,8 +45,6 @@ const MyProducts = () => {
                     toast.success('Product Deleted Successfully')
                     refetch();
                 }
-
-                // const remaining= myProducts.filter(product => product._id )
             })
 
     }

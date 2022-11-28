@@ -21,7 +21,7 @@ const BookModal = ({ carData, setCarData }) => {
             buyername, photo, photoURL, name, sellPrice, email, phone, location
         };
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://resellerhub-server-assignment-12.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

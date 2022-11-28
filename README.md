@@ -1,3 +1,33 @@
+
+# Assignment-12
+
+# Website Name:
+[Reseller Hub](https://resellerhub-assignment-12.web.app/)
+
+# Assignment Repo link:
+[https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-smrabiulislam](https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-smrabiulislam)
+
+# Assignment Server Repo link:
+[https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-smrabiulislam](https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-smrabiulislam)
+
+# Live Website Link:
+[https://resellerhub-assignment-12.web.app/](https://resellerhub-assignment-12.web.app/)
+
+# Live server link:
+[]()
+
+# Working Step:
+1. Create a react project
+2. install react-router, tailwind css
+3. create components and work on it
+4. After complete design part then i did setup firebase & mongodb
+5. Connected form to firebase
+6. setup private route for course details 
+8. Setup server site with mongodb
+9. then i upload server site on vercel
+10. then i deploy my file on firebase hosting.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

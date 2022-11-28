@@ -1,9 +1,25 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 
 const Dashboard = () => {
     const users = useLoaderData();
-    console.log(users)
+
+    const handleDelete = (user) => {
+        fetch(`http://localhost:5000/users/${user?._id}`, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json",
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.acknowledged) {
+                    toast.success("User Deleted Successfully")
+                }
+            });
+    };
+
     return (
         <div>
             <h2 className='text-3xl text-center font-semibold  mt-10'>All Users</h2>
@@ -43,7 +59,10 @@ const Dashboard = () => {
                                 </td>
                                 <td>{user?.check === true ? 'Saller' : 'Buyer'}</td>
                                 <th>
-                                    <button className="btn btn-error btn-sm">Delete</button>
+                                    <button
+                                        onClick={() => handleDelete(user)}
+                                        className="btn btn-error btn-sm"
+                                    >Delete</button>
                                 </th>
                             </tr>)
                         }

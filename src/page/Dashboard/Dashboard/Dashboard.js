@@ -6,7 +6,7 @@ const Dashboard = () => {
     const users = useLoaderData();
 
     const handleDelete = (user) => {
-        fetch(`http://localhost:5000/users/${user?._id}`, {
+        fetch(`https://resellerhub-server-assignment-12.vercel.app/users/${user?._id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",
